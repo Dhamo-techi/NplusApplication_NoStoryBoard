@@ -25,6 +25,7 @@ class CartView: UIView {
     
     var clcvwCart : UICollectionView!
 
+    var viewCheckout = UIView()
         
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -92,6 +93,11 @@ class CartView: UIView {
         clcvwCart.showsVerticalScrollIndicator = false
         layoutdict["clcvwCart"] = clcvwCart
         viewContent.addSubview(clcvwCart)
+        
+        viewCheckout.translatesAutoresizingMaskIntoConstraints = false
+        viewCheckout.backgroundColor = .none
+        layoutdict["viewCheckout"] = viewCheckout
+        baseView.addSubview(viewCheckout)
         
         viewContent.topAnchor.constraint(equalTo: baseView.safeAreaLayoutGuide.topAnchor, constant: 0).isActive = true
         viewContent.bottomAnchor.constraint(equalTo: baseView.safeAreaLayoutGuide.bottomAnchor, constant: 0).isActive = true
