@@ -158,5 +158,23 @@ class CartCollectionViewCell: UICollectionViewCell {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
+    
+    func configure(with product: CartProduct) {
+        lblProductTitle.text = product.name
+        lblProductBrand.text = product.brand
+        lblPrice.text = "\(product.price ?? 0)"
+        lblProductCount.text = "\(product.count ?? 0)"
+        let imgurl = URL(string: product.imgURL ?? "")
+        URLSession.shared.dataTask(with: imgurl!){ mydata, myres, myerr in
+            if let err = myerr{
+                print(err.localizedDescription)
+            }
+            if let data = mydata{
+                let imgdata = UIImage(data: data)
+                DispatchQueue.main.async {
+                    self.imageviewProduct.image = imgdata
+                }
+            }
+        }.resume()
+    }
 }

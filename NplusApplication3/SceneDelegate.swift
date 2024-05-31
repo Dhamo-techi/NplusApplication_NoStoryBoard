@@ -17,7 +17,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let WindowScene = (scene as? UIWindowScene) else { return }
         window = UIWindow(frame: WindowScene.coordinateSpace.bounds)
         window?.windowScene = WindowScene
-        let vc = CartVC()
+        let vc = VendorsVC()
         let navigationController = UINavigationController(rootViewController: vc)
         window?.rootViewController = navigationController
         window?.makeKeyAndVisible()

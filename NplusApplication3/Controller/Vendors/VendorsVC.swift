@@ -7,7 +7,9 @@
 
 import UIKit
 
-class VendorsVC: UIViewController {
+class VendorsVC: UIViewController, AddToCartDelegate {
+    
+    
     
     var product: [Products] = []
         
@@ -17,6 +19,10 @@ class VendorsVC: UIViewController {
     
     var passid = Int()
     
+    var Cartproducts: [CartProduct] = []
+
+    var passCartProducts = [Any]()
+        
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -40,12 +46,23 @@ class VendorsVC: UIViewController {
     }
     
     func addtarget(){
+        
         vendorView.btnMenu.addTarget(self, action: #selector(btnMenuTapped(_:)), for: .touchUpInside)
         
+        vendorView.btnViewCart.addTarget(self, action: #selector(viewCartTapped(_:)), for: .touchUpInside)
     }
     
     @objc func btnMenuTapped(_ sender: UIButton){
         navigationController?.popViewController(animated: true)
+    }
+    
+    @objc func viewCartTapped(_ sender: UIButton){
+        let vc = CartVC()
+        self.passCartProducts = self.Cartproducts
+        
+        vc.recieveCartProduct = self.Cartproducts
+        
+        navigationController?.pushViewController(vc, animated: true)
     }
     
     func ProductAPI()  {
@@ -61,6 +78,12 @@ class VendorsVC: UIViewController {
             }
         }
     }
+    
+    func didAddToCart(name: String?, brand: String?, imgURL: String?, price: Double?, count: Int?) {
+        let product = CartProduct(name: name, brand: brand, imgURL: imgURL, price: price, count: count)
+        Cartproducts.append(product)
+    }
+
 
 }
 
@@ -108,10 +131,39 @@ extension VendorsVC: UITableViewDelegate, UITableViewDataSource{
         self.passid = self.product[indexPath.row].id ?? 0
         print(self.passid)
         vc.recieveId = self.passid
+        vc.delegate = self
+        
+        vc.callBack = { [weak self] name, brand, prdImg in
+            self?.vendorView.viewCart.isHidden = false
+            self?.vendorView.lblProductTitle.text = name
+            self?.vendorView.lblProductBrand.text = brand
+
+            let imgurl = URL(string: prdImg)
+            URLSession.shared.dataTask(with: imgurl!){ mydata, myres, myerr in
+
+                if let err = myerr{
+                    print(err.localizedDescription)
+                }
+
+                if let data = mydata{
+                    let imgdata = UIImage(data: data)
+                    DispatchQueue.main.async {
+                        self?.vendorView.imageProduct.image = imgdata
+                    }
+                }
+            }.resume()
+        }
         navigationController?.pushViewController(vc, animated: true)
     }
     
 }
 
+struct CartProduct {
+    var name: String?
+    var brand: String?
+    var imgURL: String?
+    var price: Double?
+    var count: Int?
+}
 
 

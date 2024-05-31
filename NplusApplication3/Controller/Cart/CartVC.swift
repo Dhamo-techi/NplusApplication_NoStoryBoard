@@ -11,6 +11,8 @@ class CartVC: UIViewController {
 
     var cartview = CartView()
     
+    var recieveCartProduct = [CartProduct]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -19,6 +21,11 @@ class CartVC: UIViewController {
         setupViews()
         
         addtargets()
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        DispatchQueue.main.async {
+            self.cartview.clcvwCart.reloadData()
+        }
     }
     
     func setupViews(){
@@ -29,18 +36,25 @@ class CartVC: UIViewController {
     }
     
     func addtargets(){
-        
+        cartview.btnBack.addTarget(self, action: #selector(backBtnTapped(_:)), for: .touchUpInside)
     }
+    
+    @objc func backBtnTapped(_ sender: UIButton) {
+        navigationController?.popViewController(animated: true)
+    }
+    
+    
 }
 
 extension CartVC : UICollectionViewDelegate, UICollectionViewDataSource,UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 12
+        return recieveCartProduct.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CartCollectionViewCell", for: indexPath) as! CartCollectionViewCell
-        
+        let product = recieveCartProduct[indexPath.item]
+        cell.configure(with: product)
         return cell
     }
     

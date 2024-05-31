@@ -15,6 +15,13 @@ class AddToCartVC: UIViewController {
     
     var dataproduct: Products?
     
+    var TotalPrice = Double()
+
+    
+    weak var delegate: AddToCartDelegate?
+    
+    var callBack: ((_ name: String,_ brand: String,_ prdImg: String)-> Void)?
+    
     var count: Int = 1 {
         didSet {
             addToCartView.lblCount.text = "\(count)"
@@ -22,7 +29,7 @@ class AddToCartVC: UIViewController {
         }
     }
     
-    var price : Int = 0 {
+    var price : Double = 0 {
         didSet {
             addToCartView.lblPrice.text = "$.\(20)"
             updatePrice()
@@ -56,10 +63,18 @@ class AddToCartVC: UIViewController {
         addToCartView.btnAdd.addTarget(self, action: #selector(prdtAddBtnTapped(_:)), for: .touchUpInside)
         addToCartView.btnMinus.addTarget(self, action: #selector(prdtMinusBtnTapped(_:)), for: .touchUpInside)
         addToCartView.btnBack.addTarget(self, action: #selector(backBtnTapped(_:)), for: .touchUpInside)
+        addToCartView.btnAddToCart.addTarget(self, action: #selector(AddtoCartBtnTapped(_:)), for: .touchUpInside)
     }
     
     @objc func backBtnTapped(_ sender: UIButton) {
         print("back")
+        navigationController?.popViewController(animated: true)
+    }
+    
+    @objc func AddtoCartBtnTapped(_ sender: UIButton) {
+        callBack?(dataproduct?.title ?? "", dataproduct?.brand ?? "", dataproduct?.thumbnail ?? "")
+        
+        delegate?.didAddToCart(name: dataproduct?.title ?? "", brand: dataproduct?.brand ?? "", imgURL: dataproduct?.thumbnail ?? "", price: TotalPrice , count: count)
         navigationController?.popViewController(animated: true)
     }
     
@@ -101,7 +116,7 @@ class AddToCartVC: UIViewController {
                     }.resume()
                     
                     if let productPrice = data?.price {
-                        self.price = Int(productPrice)
+                        self.price = Double(productPrice)
                         let initialPrice = self.price
                         self.addToCartView.lblPrice.text = "$.\(initialPrice)"
                         self.price = initialPrice
@@ -124,8 +139,8 @@ class AddToCartVC: UIViewController {
     }
     
     func updatePrice() {
-        let totalPrice = count * price
-        addToCartView.lblPrice.text = "$.\(totalPrice)"
+        self.TotalPrice = Double(count) * Double(price)
+        addToCartView.lblPrice.text = "$.\(self.TotalPrice)"
     }
     
 }
