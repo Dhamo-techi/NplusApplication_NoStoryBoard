@@ -91,7 +91,7 @@ class CartCollectionViewCell: UICollectionViewCell {
         lblPrice.numberOfLines = 1
         lblPrice.textAlignment = .left
         lblPrice.textColor = .black
-        lblPrice.font = UIFont.systemFont(ofSize: 20, weight: .semibold)
+        lblPrice.font = UIFont.systemFont(ofSize: 18, weight: .semibold)
         layoutdict["lblPrice"] = lblPrice
         viewPriceDetails.addSubview(lblPrice)
         
@@ -145,7 +145,7 @@ class CartCollectionViewCell: UICollectionViewCell {
         
         viewAddPrd.centerYAnchor.constraint(equalTo: viewPriceDetails.centerYAnchor, constant: 0).isActive = true
         viewAddPrd.heightAnchor.constraint(equalToConstant: 30).isActive = true
-        viewPriceDetails.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|[lblPrice(100)][viewAddPrd]|", options: [], metrics: nil, views: layoutdict))
+        viewPriceDetails.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|[lblPrice][viewAddPrd(100)]|", options: [], metrics: nil, views: layoutdict))
         
         viewAddPrd.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|[btnAdd]|", options: [], metrics: nil, views: layoutdict))
         viewAddPrd.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|[lblProductCount]|", options: [], metrics: nil, views: layoutdict))
@@ -162,7 +162,7 @@ class CartCollectionViewCell: UICollectionViewCell {
     func configure(with product: CartProduct) {
         lblProductTitle.text = product.name
         lblProductBrand.text = product.brand
-        lblPrice.text = "\(product.price ?? 0)"
+        lblPrice.text = "$.\(product.price ?? 0)"
         lblProductCount.text = "\(product.count ?? 0)"
         let imgurl = URL(string: product.imgURL ?? "")
         URLSession.shared.dataTask(with: imgurl!){ mydata, myres, myerr in

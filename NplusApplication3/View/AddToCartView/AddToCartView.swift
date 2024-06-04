@@ -256,10 +256,10 @@ class AddToCartView: UIView {
         viewProductDetails.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|[viewProductPrice]|", options: [], metrics: nil, views: layoutdict))
         
         viewProductPrice.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|[lblPrice]|", options: [], metrics: nil, views: layoutdict))
-        viewProductPrice.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-20-[lblPrice(120)]", options: [], metrics: nil, views: layoutdict))
+        viewProductPrice.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-20-[lblPrice][viewAddorMinusProduct(180)]-10-|", options: [], metrics: nil, views: layoutdict))
         
         viewProductPrice.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|[viewAddorMinusProduct]|", options: [], metrics: nil, views: layoutdict))
-        viewProductPrice.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:[viewAddorMinusProduct(200)]-10-|", options: [], metrics: nil, views: layoutdict))
+//        viewProductPrice.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:[viewAddorMinusProduct(180)]-10-|", options: [], metrics: nil, views: layoutdict))
         
         viewAddorMinusProduct.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|[btnAdd]|", options: [], metrics: nil, views: layoutdict))
         
@@ -273,7 +273,7 @@ class AddToCartView: UIView {
         
         viewProductDetails.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-20-[lblProductDescription]|", options: [], metrics: nil, views: layoutdict))
         
-        btnAddToCart.bottomAnchor.constraint(equalTo: viewProductDetails.safeAreaLayoutGuide.bottomAnchor, constant: 0).isActive = true
+        btnAddToCart.bottomAnchor.constraint(equalTo: viewProductDetails.safeAreaLayoutGuide.bottomAnchor, constant: -10).isActive = true
         btnAddToCart.heightAnchor.constraint(equalToConstant: 60).isActive = true
         viewProductDetails.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-20-[btnAddToCart]-20-|", options: [], metrics: nil, views: layoutdict))
         

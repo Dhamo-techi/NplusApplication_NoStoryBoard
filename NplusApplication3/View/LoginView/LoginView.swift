@@ -242,10 +242,6 @@ class LoginView: UIView {
         
         btnFbContinue.heightAnchor.constraint(equalToConstant: 50).isActive = true
         btnTwitterContinue.heightAnchor.constraint(equalToConstant: 50).isActive = true
-
-
-        
-        
-    
+ 
     }
 }
