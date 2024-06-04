@@ -16,6 +16,10 @@
 		053B7E432C0D869D003A9878 /* WalletVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053B7E422C0D869D003A9878 /* WalletVC.swift */; };
 		053B7E542C0D8700003A9878 /* walletView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053B7E532C0D8700003A9878 /* walletView.swift */; };
 		053B7E5D2C0DD343003A9878 /* walletCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053B7E5C2C0DD343003A9878 /* walletCollectionCell.swift */; };
+		053B7E632C0EDADE003A9878 /* nameTagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053B7E622C0EDADE003A9878 /* nameTagView.swift */; };
+		053B7E6C2C0EDB16003A9878 /* nameTagVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053B7E6B2C0EDB16003A9878 /* nameTagVC.swift */; };
+		053B7E712C0EF7F8003A9878 /* ProfileTagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053B7E702C0EF7F8003A9878 /* ProfileTagView.swift */; };
+		053B7E762C0EF80F003A9878 /* ProfileTagVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053B7E752C0EF80F003A9878 /* ProfileTagVC.swift */; };
 		0554442B2C06F0D2000BCC18 /* AddToCartVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0554442A2C06F0D2000BCC18 /* AddToCartVC.swift */; };
 		058D7EEC2C05BAEF005868EE /* VendorsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 058D7EEB2C05BAEF005868EE /* VendorsView.swift */; };
 		058D7EF92C05BB66005868EE /* VendorsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 058D7EF82C05BB66005868EE /* VendorsVC.swift */; };
@@ -63,6 +67,10 @@
 		053B7E422C0D869D003A9878 /* WalletVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletVC.swift; sourceTree = "<group>"; };
 		053B7E532C0D8700003A9878 /* walletView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = walletView.swift; sourceTree = "<group>"; };
 		053B7E5C2C0DD343003A9878 /* walletCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = walletCollectionCell.swift; sourceTree = "<group>"; };
+		053B7E622C0EDADE003A9878 /* nameTagView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = nameTagView.swift; sourceTree = "<group>"; };
+		053B7E6B2C0EDB16003A9878 /* nameTagVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = nameTagVC.swift; sourceTree = "<group>"; };
+		053B7E702C0EF7F8003A9878 /* ProfileTagView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTagView.swift; sourceTree = "<group>"; };
+		053B7E752C0EF80F003A9878 /* ProfileTagVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTagVC.swift; sourceTree = "<group>"; };
 		0554442A2C06F0D2000BCC18 /* AddToCartVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddToCartVC.swift; sourceTree = "<group>"; };
 		058D7EEB2C05BAEF005868EE /* VendorsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VendorsView.swift; sourceTree = "<group>"; };
 		058D7EF82C05BB66005868EE /* VendorsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VendorsVC.swift; sourceTree = "<group>"; };
@@ -186,6 +194,24 @@
 				053B7E5C2C0DD343003A9878 /* walletCollectionCell.swift */,
 			);
 			path = WalletCollectionView;
+			sourceTree = "<group>";
+		};
+		053B7E612C0ED1BF003A9878 /* NameTagView */ = {
+			isa = PBXGroup;
+			children = (
+				053B7E622C0EDADE003A9878 /* nameTagView.swift */,
+				053B7E702C0EF7F8003A9878 /* ProfileTagView.swift */,
+			);
+			path = NameTagView;
+			sourceTree = "<group>";
+		};
+		053B7E6A2C0EDAEB003A9878 /* NameTag */ = {
+			isa = PBXGroup;
+			children = (
+				053B7E6B2C0EDB16003A9878 /* nameTagVC.swift */,
+				053B7E752C0EF80F003A9878 /* ProfileTagVC.swift */,
+			);
+			path = NameTag;
 			sourceTree = "<group>";
 		};
 		053EB2332C059ECE00BA2FC3 /* LoginView */ = {
@@ -343,6 +369,7 @@
 				0534D0312C08576D00C6D909 /* Cartview */,
 				0534D04E2C09DFAC00C6D909 /* SearchView */,
 				053B7E472C0D86B8003A9878 /* WalletView */,
+				053B7E612C0ED1BF003A9878 /* NameTagView */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -357,6 +384,7 @@
 				055444292C06F081000BCC18 /* AddToCart */,
 				0534D0222C0855D500C6D909 /* Cart */,
 				053B7E412C0D859A003A9878 /* Wallet */,
+				053B7E6A2C0EDAEB003A9878 /* NameTag */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -499,12 +527,16 @@
 				0554442B2C06F0D2000BCC18 /* AddToCartVC.swift in Sources */,
 				053B7E542C0D8700003A9878 /* walletView.swift in Sources */,
 				05E6A74B2C046EBC0034A091 /* AppDelegate.swift in Sources */,
+				053B7E6C2C0EDB16003A9878 /* nameTagVC.swift in Sources */,
 				058D7EF92C05BB66005868EE /* VendorsVC.swift in Sources */,
+				053B7E712C0EF7F8003A9878 /* ProfileTagView.swift in Sources */,
 				05E6A7A22C059A220034A091 /* WebVC.swift in Sources */,
 				053B7E432C0D869D003A9878 /* WalletVC.swift in Sources */,
+				053B7E632C0EDADE003A9878 /* nameTagView.swift in Sources */,
 				058D7F022C05C7B9005868EE /* VendorTableViewCell.swift in Sources */,
 				0534D0242C0855FE00C6D909 /* CartVC.swift in Sources */,
 				053B7E5D2C0DD343003A9878 /* walletCollectionCell.swift in Sources */,
+				053B7E762C0EF80F003A9878 /* ProfileTagVC.swift in Sources */,
 				05921AC32C06F9270061E78A /* AddToCartView.swift in Sources */,
 				05E6A78B2C046F1C0034A091 /* LoginVC.swift in Sources */,
 				05E6A74D2C046EBC0034A091 /* SceneDelegate.swift in Sources */,
