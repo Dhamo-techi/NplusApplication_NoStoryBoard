@@ -20,6 +20,10 @@
 		053B7E6C2C0EDB16003A9878 /* nameTagVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053B7E6B2C0EDB16003A9878 /* nameTagVC.swift */; };
 		053B7E712C0EF7F8003A9878 /* ProfileTagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053B7E702C0EF7F8003A9878 /* ProfileTagView.swift */; };
 		053B7E762C0EF80F003A9878 /* ProfileTagVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053B7E752C0EF80F003A9878 /* ProfileTagVC.swift */; };
+		053B7E7C2C0F21B1003A9878 /* defibrillatorsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053B7E7B2C0F21B1003A9878 /* defibrillatorsView.swift */; };
+		053B7E822C0F21E4003A9878 /* defibrillatorsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053B7E812C0F21E4003A9878 /* defibrillatorsVC.swift */; };
+		053B7E882C10289F003A9878 /* DefibrillatorsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053B7E872C10289F003A9878 /* DefibrillatorsTableViewCell.swift */; };
+		053B7E902C10743B003A9878 /* AllDefibrillatorsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053B7E8F2C10743B003A9878 /* AllDefibrillatorsTableViewCell.swift */; };
 		0554442B2C06F0D2000BCC18 /* AddToCartVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0554442A2C06F0D2000BCC18 /* AddToCartVC.swift */; };
 		058D7EEC2C05BAEF005868EE /* VendorsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 058D7EEB2C05BAEF005868EE /* VendorsView.swift */; };
 		058D7EF92C05BB66005868EE /* VendorsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 058D7EF82C05BB66005868EE /* VendorsVC.swift */; };
@@ -71,6 +75,10 @@
 		053B7E6B2C0EDB16003A9878 /* nameTagVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = nameTagVC.swift; sourceTree = "<group>"; };
 		053B7E702C0EF7F8003A9878 /* ProfileTagView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTagView.swift; sourceTree = "<group>"; };
 		053B7E752C0EF80F003A9878 /* ProfileTagVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTagVC.swift; sourceTree = "<group>"; };
+		053B7E7B2C0F21B1003A9878 /* defibrillatorsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = defibrillatorsView.swift; sourceTree = "<group>"; };
+		053B7E812C0F21E4003A9878 /* defibrillatorsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = defibrillatorsVC.swift; sourceTree = "<group>"; };
+		053B7E872C10289F003A9878 /* DefibrillatorsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefibrillatorsTableViewCell.swift; sourceTree = "<group>"; };
+		053B7E8F2C10743B003A9878 /* AllDefibrillatorsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllDefibrillatorsTableViewCell.swift; sourceTree = "<group>"; };
 		0554442A2C06F0D2000BCC18 /* AddToCartVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddToCartVC.swift; sourceTree = "<group>"; };
 		058D7EEB2C05BAEF005868EE /* VendorsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VendorsView.swift; sourceTree = "<group>"; };
 		058D7EF82C05BB66005868EE /* VendorsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VendorsVC.swift; sourceTree = "<group>"; };
@@ -212,6 +220,32 @@
 				053B7E752C0EF80F003A9878 /* ProfileTagVC.swift */,
 			);
 			path = NameTag;
+			sourceTree = "<group>";
+		};
+		053B7E7A2C0F2141003A9878 /* Defibrillators */ = {
+			isa = PBXGroup;
+			children = (
+				053B7E7B2C0F21B1003A9878 /* defibrillatorsView.swift */,
+				053B7E862C102873003A9878 /* DefibrillatorsTableViewCell */,
+			);
+			path = Defibrillators;
+			sourceTree = "<group>";
+		};
+		053B7E802C0F21BA003A9878 /* Defibrillators */ = {
+			isa = PBXGroup;
+			children = (
+				053B7E812C0F21E4003A9878 /* defibrillatorsVC.swift */,
+			);
+			path = Defibrillators;
+			sourceTree = "<group>";
+		};
+		053B7E862C102873003A9878 /* DefibrillatorsTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				053B7E872C10289F003A9878 /* DefibrillatorsTableViewCell.swift */,
+				053B7E8F2C10743B003A9878 /* AllDefibrillatorsTableViewCell.swift */,
+			);
+			path = DefibrillatorsTableViewCell;
 			sourceTree = "<group>";
 		};
 		053EB2332C059ECE00BA2FC3 /* LoginView */ = {
@@ -370,6 +404,7 @@
 				0534D04E2C09DFAC00C6D909 /* SearchView */,
 				053B7E472C0D86B8003A9878 /* WalletView */,
 				053B7E612C0ED1BF003A9878 /* NameTagView */,
+				053B7E7A2C0F2141003A9878 /* Defibrillators */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -385,6 +420,7 @@
 				0534D0222C0855D500C6D909 /* Cart */,
 				053B7E412C0D859A003A9878 /* Wallet */,
 				053B7E6A2C0EDAEB003A9878 /* NameTag */,
+				053B7E802C0F21BA003A9878 /* Defibrillators */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -525,12 +561,15 @@
 				058D7EEC2C05BAEF005868EE /* VendorsView.swift in Sources */,
 				058D7F2A2C05FED2005868EE /* APIservice.swift in Sources */,
 				0554442B2C06F0D2000BCC18 /* AddToCartVC.swift in Sources */,
+				053B7E882C10289F003A9878 /* DefibrillatorsTableViewCell.swift in Sources */,
 				053B7E542C0D8700003A9878 /* walletView.swift in Sources */,
 				05E6A74B2C046EBC0034A091 /* AppDelegate.swift in Sources */,
 				053B7E6C2C0EDB16003A9878 /* nameTagVC.swift in Sources */,
 				058D7EF92C05BB66005868EE /* VendorsVC.swift in Sources */,
 				053B7E712C0EF7F8003A9878 /* ProfileTagView.swift in Sources */,
+				053B7E822C0F21E4003A9878 /* defibrillatorsVC.swift in Sources */,
 				05E6A7A22C059A220034A091 /* WebVC.swift in Sources */,
+				053B7E902C10743B003A9878 /* AllDefibrillatorsTableViewCell.swift in Sources */,
 				053B7E432C0D869D003A9878 /* WalletVC.swift in Sources */,
 				053B7E632C0EDADE003A9878 /* nameTagView.swift in Sources */,
 				058D7F022C05C7B9005868EE /* VendorTableViewCell.swift in Sources */,
@@ -542,6 +581,7 @@
 				05E6A74D2C046EBC0034A091 /* SceneDelegate.swift in Sources */,
 				0534D04A2C099B7D00C6D909 /* AddToCartDelegate.swift in Sources */,
 				058D7F2F2C060410005868EE /* ViewModel.swift in Sources */,
+				053B7E7C2C0F21B1003A9878 /* defibrillatorsView.swift in Sources */,
 				0534D0332C08579000C6D909 /* CartView.swift in Sources */,
 				0534D0412C08825E00C6D909 /* CartCollectionViewCell.swift in Sources */,
 				058D7F0A2C05FBF2005868EE /* ProductModel.swift in Sources */,

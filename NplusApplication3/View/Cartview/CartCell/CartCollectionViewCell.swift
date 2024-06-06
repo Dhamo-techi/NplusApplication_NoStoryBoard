@@ -145,7 +145,7 @@ class CartCollectionViewCell: UICollectionViewCell {
         
         viewAddPrd.centerYAnchor.constraint(equalTo: viewPriceDetails.centerYAnchor, constant: 0).isActive = true
         viewAddPrd.heightAnchor.constraint(equalToConstant: 30).isActive = true
-        viewPriceDetails.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|[lblPrice][viewAddPrd(100)]|", options: [], metrics: nil, views: layoutdict))
+        viewPriceDetails.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|[lblPrice][viewAddPrd(110)]|", options: [], metrics: nil, views: layoutdict))
         
         viewAddPrd.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|[btnAdd]|", options: [], metrics: nil, views: layoutdict))
         viewAddPrd.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|[lblProductCount]|", options: [], metrics: nil, views: layoutdict))
