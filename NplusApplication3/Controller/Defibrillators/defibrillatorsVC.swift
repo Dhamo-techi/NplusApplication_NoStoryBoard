@@ -14,7 +14,6 @@ class defibrillatorsVC: UIViewController {
     var isExpanded = false
     let defaultHeight: CGFloat = 120
     
-    var collectionViewHeightConstraint: NSLayoutConstraint!
     
     override func viewDidLoad() {
         super.viewDidLoad()
